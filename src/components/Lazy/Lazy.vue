@@ -58,7 +58,7 @@ export default Vue.extend({
         } else if (this.unrender) {
           clearTimeout(this.renderTimer);
           this.unrenderTimer = setTimeout(() => {
-            this.fixedMinHeight = this.$refs.targetEl.clientHeight;
+            this.fixedMinHeight = this.$refs.targetEl?.clientHeight;
             this.shouldRender = false;
           }, this.unrenderDelay);
         }

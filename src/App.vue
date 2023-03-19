@@ -37,3 +37,8 @@ export default Vue.extend({
   align-items: center;
 }
 </style>
+<style>
+.v-main__wrap {
+  height: 100%;
+}
+</style>

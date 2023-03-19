@@ -39,7 +39,7 @@
           class="mx-8"
         ></v-textarea>
         <v-btn
-          @click="changePostNamehandler(post.id)"
+          @click="changePostNameHandler(post.id)"
           color="primary"
           class="ml-auto mr-8 mb-8"
           >Сохранить</v-btn
@@ -89,7 +89,7 @@ export default Vue.extend({
   }),
   methods: {
     ...mapMutations(["changePostName", "deletePost"]),
-    changePostNamehandler(id: string) {
+    changePostNameHandler(id: string) {
       this.changePostName({
         id,
         name: this.modalRenamePost.newName,

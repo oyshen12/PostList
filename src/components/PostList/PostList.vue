@@ -15,7 +15,7 @@
     </div>
     <v-list>
       <Lazy
-        v-for="post in posts"
+        v-for="post in postsFiltered"
         :key="post.id"
         :min-height="150"
         :unrender="true"
@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import { mapMutations, mapState } from "vuex";
 import Lazy from "../Lazy/Lazy.vue";
@@ -65,6 +65,11 @@ export default Vue.extend({
   }),
   computed: {
     ...mapState(["posts"]),
+    postsFiltered() {
+      return this.posts.filter((post) =>
+        post.name.includes(this.searchablePosts)
+      );
+    },
   },
   methods: {
     ...mapMutations(["addPost"]),
