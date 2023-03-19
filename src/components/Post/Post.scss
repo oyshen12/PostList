@@ -1,0 +1,20 @@
+.post {
+  margin-top: 16px;
+
+  &__card {
+    margin: 0 auto;
+    background: #26c6da;
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 100%;
+    min-height: 150px;
+
+    &:hover {
+      background: #01e0fd;
+    }
+
+    &.active {
+      background: #01e0fd;
+    }
+  }
+}

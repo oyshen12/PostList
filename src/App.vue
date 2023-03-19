@@ -1,24 +1,39 @@
 <template>
   <v-app>
-    <v-main>
-      <HelloWorld />
+    <v-main class="main">
+      <PostList />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { mapMutations } from "vuex";
+import PostList from "./components/PostList/PostList.vue";
+import posts from "./posts.json";
 
 export default Vue.extend({
   name: "App",
-
   components: {
-    HelloWorld,
+    PostList,
+  },
+  methods: {
+    ...mapMutations(["setPosts"]),
   },
 
   data: () => ({
     //
   }),
+  mounted() {
+    this.setPosts(posts.posts);
+  },
 });
 </script>
+
+<style scoped>
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
