@@ -20,10 +20,6 @@ export default Vue.extend({
   methods: {
     ...mapMutations(["setPosts"]),
   },
-
-  data: () => ({
-    //
-  }),
   mounted() {
     this.setPosts(posts.posts);
   },

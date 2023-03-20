@@ -100,9 +100,6 @@ export default Vue.extend({
       };
     },
   },
-  updated() {
-    console.log("updated ", this.post.id);
-  },
 });
 </script>
 

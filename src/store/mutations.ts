@@ -15,7 +15,6 @@ export default {
     }
   },
   setPosts(state, payload) {
-    //state.posts = payload.map((item: any) => Object.freeze(item));
     state.posts = payload;
   },
   addPost(state, name) {
