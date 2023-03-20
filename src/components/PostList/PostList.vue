@@ -27,6 +27,9 @@
         />
       </Lazy>
     </v-list>
+    <div class="posts__empty" v-if="postsFiltered.length === 0">
+      Ничего не найдено :(
+    </div>
     <v-dialog v-model="modalNewPost.opened" max-width="600">
       <v-card class="d-flex flex-column">
         <v-card-title>Новый пост</v-card-title>
@@ -67,7 +70,7 @@ export default Vue.extend({
     ...mapState(["posts"]),
     postsFiltered() {
       return this.posts.filter((post) =>
-        post.name.includes(this.searchablePosts)
+        post.name.toLowerCase().includes(this.searchablePosts.toLowerCase())
       );
     },
   },
